@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { selectAuthState, setAuthState } from "../store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { wrapper } from "../store/store";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const authState = useSelector(selectAuthState);
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
         gridRowGap: "20px",
       }}
     >
+      <Link href="/second-page">Go to second page</Link>
       <div>{authState ? "Logged in" : "Not Logged In"}</div>
       <button
         onClick={() =>
